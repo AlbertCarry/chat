@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn</title>
+</head>
+<body>
+<!--<form action="#" th:action="@{/login}" th:object="${userFormLogIn}" method="post" name="reg">-->
+<form>
+    <input placeholder="Login" <!--th:field="*{login}"--> name="login" type="text"><br>
+    <input placeholder="Password" <!--th:field="*{password}"--> name="password" type="password"><br>
+    <input name="registration" type="submit" value="Log  in">&nbsp;
+</form>
+<form action="/signin"><button>Sing in</button>
+</form>
+</body>
+</html>

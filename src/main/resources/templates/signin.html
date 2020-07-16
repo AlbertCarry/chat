@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUP</title>
+</head>
+<body>
+<form action="#" th:action="@{/signup}" th:object="${userFormReg}" method="post" name="reg">
+    <input placeholder="First_Name" th:field="*{firstName}" name="firstName" type="text"><br>
+    <input placeholder="Last_Name" th:field="*{lastName}" name="lastName" type="text"><br>
+    <input placeholder="Login" th:field="*{login}" name="login" type="text"><br>
+    <input placeholder="Password" th:field="*{password}" name="password" type="password"><br>
+    <input name="registration" type="submit" value="Registration"><br>&nbsp;
+</form>
+</body>
+</html>

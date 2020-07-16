@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+</head>
+<body>
+<p><a href="/logout">Exit</a></p>
+<table>
+    <thead>
+    <tr>
+        <th>F R I E N D S</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td><a th:href="@{messages/{id}(id=${user.id})}"> / Send Message /</a></td>
+        <td><a th:href="@{account-update/{id}(id=${user.id})}">  Change Account /</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

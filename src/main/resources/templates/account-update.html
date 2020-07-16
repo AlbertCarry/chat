@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>UpDate user</title>
+</head>
+<body>
+<form action="#" th:action="@{/account-update}" th:object="${user}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+    <br/>
+    <input type="text" th:field="*{lastName}" id="secondName" placeholder="Last Name">
+    <br/>
+    <input type="text" th:field="*{login}" id="login" placeholder="Login">
+    <br/>
+    <input type="text" th:field="*{hashPassword}" id="password" placeholder="Password">
+    <br/>
+    <input type="text" th:field="*{role}" id="role" placeholder="Role">
+    <br/>
+    <input type="text" th:field="*{state}" id="state" placeholder="State">
+    <br/>
+    <input type="text" th:field="*{email}" id="email" placeholder="email">
+    <br/>
+    <input type="submit" value="Update User">
+</form>
+</body>
+</html>

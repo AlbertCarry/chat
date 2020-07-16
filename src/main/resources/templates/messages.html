@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Message</title>
+</head>
+<body>
+<p><a href="/account">Back</a></p>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>M E S S A G E S</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="messages : ${messages}">
+        <td th:text="${messages.fromName}"></td>
+        <td th:text="${messages.message}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/messages}" th:object="${messageform}" method="post">
+    <input hidden = "true" readonly type="text" th:field="*{idFrom}">
+    <input hidden = "true" readonly type="text" th:field="*{fromName}">
+    <input hidden = "true" readonly type="text" th:field="*{idTo}">
+    <input hidden = "true" readonly type="text" th:field="*{toName}" >
+    <input hidden = "true" readonly type="text" th:field="*{data}" >
+    <input type="text" th:field="*{message}" id="message" placeholder="Write message. . .">
+    <input type="submit" value="Send">
+</form>
+</body>
+</html>
