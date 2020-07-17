@@ -6,7 +6,7 @@
 </head>
 <body>
 <p><a href="/logout">Exit</a></p>
-<table>
+<p><a href="/findfriends">Find Friends</a></p><table>
     <thead>
     <tr>
         <th>F R I E N D S</th>
@@ -18,6 +18,10 @@
         <td th:text="${user.lastName}"></td>
         <td><a th:href="@{messages/{id}(id=${user.id})}"> / Send Message /</a></td>
         <td><a th:href="@{account-update/{id}(id=${user.id})}">  Change Account /</a></td>
+        <td><a th:href="@{subscribe/{id}(id=${user.id})}"> Subscribe /</a></td>
+        <td><a th:href="@{unsubscribe/{id}(id=${user.id})}"> Unsubscribe / </a></td>
+
+
     </tr>
     </tbody>
 </table>

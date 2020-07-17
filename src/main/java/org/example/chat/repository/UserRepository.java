@@ -18,5 +18,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value = "select * from user_spau where id != ?1",nativeQuery = true)
     List<Optional<User>> findAllBesidesMe(Long id);
+    @Query(value = "select * from user_spau where first_name = ?1 or last_name = ?1 ",nativeQuery = true)
+    List<Optional<User>> findAllByName(String firstName);
 
 }

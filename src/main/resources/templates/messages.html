@@ -17,6 +17,7 @@
     <tr th:each="messages : ${messages}">
         <td th:text="${messages.fromName}"></td>
         <td th:text="${messages.message}"></td>
+        <td th:text="${messages.date}"></td>
     </tr>
     </tbody>
 </table>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Friends</title>
+</head>
+<p><a href="/logout">Exit</a></p>
+<p><a href="/account">Account</a></p>
+<body>
+<form action="#" th:action="@{/findfriends}" th:object="${findFriendForm}" method="post">
+    <input placeholder="Value" th:field="*{value}"  type="text"><br>
+    <input name="registration" type="submit" value="FIND"><br>&nbsp;
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>P E O P L E</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td><a th:href="@{messages/{id}(id=${user.id})}">Send Message</a></td>
+        <td><a th:href="@{subscribe/{id}(id=${user.id})}">Subscribe</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
